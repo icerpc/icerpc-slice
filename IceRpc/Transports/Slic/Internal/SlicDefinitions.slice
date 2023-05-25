@@ -6,14 +6,14 @@ module IceRpc::Transports::Slic::Internal
 /// The Slic frame types.
 [cs::internal]
 enum FrameType : uint8 {
-    /// Initiates the initialization of the multiplexed connection after the duplex connetion establishment.
+    // Initiates the connection establishment.
     Initialize = 1
 
     /// Acknowledges the receipt of the initialize frame.
     InitializeAck
 
-    /// Indicates the client side the versions supported by the server if the version carried by the initialize frame
-    /// is not supported.
+    /// Indicates the versions supported by the server. The server sends this frame if the version from the initialize
+    /// frame is not supported.
     Versions
 
     /// Initiates the closure of the connection.
