@@ -124,6 +124,6 @@ compact struct StreamReadsClosedBody {
 [cs::internal]
 [cs::readonly]
 compact struct StreamWritesClosedBody {
-    /// The application error code indicating the reason why the peer is no longer writting data.
+    /// The application error code indicating the reason why the peer is no longer writing data.
     applicationErrorCode: varuint62
 }
