@@ -15,7 +15,7 @@ enum FrameType : uint8 {
     /// Indicates the versions supported by the server. This frame is sent in response to an {@link Initialize} frame
     /// if the version from the {@link Initialize} frame is not supported by the receiver. Upon receiving the
     /// {@link Version} frame the receiver should send back a new {@link Initialize} frame with a version matching one
-    /// of the versions provided by the {@link Version} frame body.
+    /// of the versions provided by the {@link Version} frame.
     Version
 
     /// Initiates the closure of the connection.
