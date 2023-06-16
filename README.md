@@ -4,14 +4,14 @@ This repository, [icerpc-slice][icerpc-slice], provides [Slice][slice] files sha
 
 | Directory      | Description |
 |----------------|-------------|
-| Ice            | Interfaces and structs in module Ice, provided for interop with [Ice][zeroc-ice] applications.|
+| Ice            | Interfaces, structs and exceptions provided for interop with [Ice][zeroc-ice] applications.|
 | IceRpc         | Enumerations that specify response status codes, request field keys, response field keys and known compression formats.|
 | WellKnownTypes | Custom types supported by all IceRPC implementations.|
-| **/Internal    | Enumerations and compact structs used by IceRPC implementations to implement the [icerpc][icerpc-protocol] protocol, the [ice][ice-protocol] protocol, the Slice [encoding][slice-encoding] and the [Slic][slic] multiplexing adapter. These are internal IceRPC implementation details—applications that use IceRPC don't need to see these definitions.|
+| **/Internal    | Enumerations and compact structs used by IceRPC implementations to implement the [ice][ice-protocol] protocol, the [icerpc][icerpc-protocol] protocol, the Slice [encoding][slice-encoding] and the [Slic][slic] multiplexing adapter. These are internal IceRPC implementation details—applications that use IceRPC don't need to see these definitions.|
 
-> **Note**
-> Each IceRPC implementation is expected to create a git subtree with a copy of this repository. For example, the
-> `slice` directory of the [icerpc-csharp][icerpc-csharp] repository is a git subtree copy of this repository.
+
+Each IceRPC implementation is expected to create a git subtree with a copy of this repository. For example, the `slice` 
+directory of the [icerpc-csharp][icerpc-csharp] repository is a git subtree copy of this repository.
 
 [ice-protocol]: https://docs.testing.zeroc.com/docs/icerpc-core/ice-protocol/protocol-frames
 [icerpc-csharp]: https://github.com/icerpc/icerpc-csharp/
