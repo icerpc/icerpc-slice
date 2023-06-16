@@ -7,7 +7,7 @@ This repository, [icerpc-slice][icerpc-slice], provides [Slice][slice] files sha
 | Ice            | Interfaces, structs and exceptions provided for interop with [Ice][zeroc-ice] applications.|
 | IceRpc         | Enumerations that specify response status codes, request field keys, response field keys and known compression formats.|
 | WellKnownTypes | Custom types supported by all IceRPC implementations.|
-| **/Internal    | Enumerations and compact structs used by IceRPC implementations to implement the [ice][ice-protocol] protocol, the [icerpc][icerpc-protocol] protocol, the Slice [encoding][slice-encoding] and the [Slic][slic] multiplexing adapter. These are internal IceRPC implementation details—applications that use IceRPC don't need to see these definitions.|
+| **/Internal    | Enumerations and compact structs used by IceRPC implementations to implement the [ice][ice-protocol] protocol, the [icerpc][icerpc-protocol] protocol, the Slice [encoding][slice-encoding] and the [Slic][slic] multiplexing adapter. These are internal IceRPC implementation details—applications built with IceRPC don't need to see these definitions.|
 
 
 Each IceRPC implementation is expected to create a git subtree with a copy of this repository. For example, the `slice` 
