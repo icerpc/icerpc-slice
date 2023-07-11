@@ -5,6 +5,7 @@
     "Brotli",
     "Datagram",
     "icerpc",
+    "Nonmutating",
     "Oneway",
     "Slic",
     "struct",
