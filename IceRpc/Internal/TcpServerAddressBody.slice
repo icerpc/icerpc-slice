@@ -2,9 +2,10 @@
 
 mode = Slice1
 
+[cs::namespace("IceRpc.Slice.Internal")]
 module IceRpc::Internal
 
-/// Represents the body of a tcp or ssl server address in an ice service address. Used only with Slice1.
+/// Represents the body of a tcp or ssl server address in an ice proxy. Used only with Slice1.
 [cs::internal]
 [cs::readonly]
 compact struct TcpServerAddressBody {
