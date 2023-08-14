@@ -2,8 +2,7 @@
 
 mode = Slice1
 
-[cs::namespace("IceRpc.Slice.Internal")]
-module IceRpc::Internal
+module IceRpc::Slice::Internal
 
 /// A proxy encoded with Slice1 includes an InvocationMode which specifies the behavior when sending requests using this
 /// proxy.
