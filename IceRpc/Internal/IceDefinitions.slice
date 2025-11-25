@@ -113,7 +113,7 @@ enum ReplyStatus {
     /// The dispatch failed with some other exception.
     UnknownException = 7
 
-    /// The dispatch failed because the request payload could not be decoded. It is typically due to a mismatch in the
+    /// The dispatch failed because the request payload could not be decoded. This is typically due to a mismatch in the
     /// Slice definitions used by the client and the server.
     InvalidData = 8
 
