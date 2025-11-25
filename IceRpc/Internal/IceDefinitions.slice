@@ -113,8 +113,8 @@ enum ReplyStatus {
     /// The dispatch failed with some other exception.
     UnknownException = 7
 
-    /// The dispatch failed because the request payload could not be unmarshaled. It is typically due to a mismatch
-    /// in the Slice definitions used by the client and the server.
+    /// The dispatch failed because the request payload could not be decoded. It is typically due to a mismatch in the
+    /// Slice definitions used by the client and the server.
     InvalidData = 8
 
     /// The caller is not authorized to access the requested resource.
