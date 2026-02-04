@@ -101,15 +101,21 @@ struct TypeAlias {
 }
 
 struct SequenceType {
+    /// The type ID of the sequence type. Starts with 'Sequence<' and ends with '>'.
+    typeId: TypeId
     elementType: TypeId
 }
 
 struct DictionaryType {
+    /// The type ID of the dictionary type. Starts with 'Dictionary<' and ends with '>'.
+    typeId: TypeId
     keyType: TypeId
     valueType: TypeId
 }
 
 struct ResultType {
+    /// The type ID of the result type. Starts with 'Result<' and ends with '>'.
+    typeId: TypeId
     successType: TypeId
     failureType: TypeId
 }
