@@ -74,7 +74,7 @@ struct Operation {
 struct Enum {
     entityInfo: EntityInfo
     enumerators: Sequence<Enumerator>
-    underlying: Primitive?
+    underlying: TypeId?
     isCompact: bool
     isUnchecked: bool
 }
