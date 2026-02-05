@@ -14,7 +14,6 @@ struct SliceFile {
     moduleDeclaration: Module
     tag(0) attributes: Sequence<Attribute>?
     contents: Sequence<Definition>
-    anonymousTypes: Sequence<AnonymousType>
 }
 
 struct GeneratedFile {
@@ -24,13 +23,16 @@ struct GeneratedFile {
 
 enum CompilationMode : uint8 { Slice1, Slice2 }
 
-unchecked enum Definition {
+enum Definition {
     Interface(v: Interface)
     Enum(v: Enum)
     Struct(v: Struct)
     Class(v: Class)
     Exception(v: Exception)
     CustomType(v: CustomType)
+    SequenceType(v: SequenceType)
+    DictionaryType(v: DictionaryType)
+    ResultType(v: ResultType)
     TypeAlias(v: TypeAlias)
 }
 
