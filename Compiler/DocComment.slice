@@ -5,13 +5,7 @@ module Compiler
 
 struct DocComment {
     overview: Message
-    \throws: Sequence<ThrowsTag>
     see: Sequence<SeeTag>
-}
-
-struct ThrowsTag {
-    thrownType: EntityId
-    message: Message
 }
 
 struct SeeTag {
