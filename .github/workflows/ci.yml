@@ -24,4 +24,5 @@ jobs:
 
       - name: Compile Slice files
         working-directory: slicec
-        run: cargo run --release --bin slicec -- $(find ../icerpc-slice -name "*.slice") > /dev/null
+        run: |
+          find ../icerpc-slice -name '*.slice' -print0 | xargs -0 -r cargo run --release --bin slicec -- > /dev/null
