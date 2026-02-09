@@ -62,7 +62,6 @@ struct Enum {
     isUnchecked: bool
     underlying: TypeId?
     enumerators: Sequence<Enumerator>
-
 }
 
 struct Enumerator {
