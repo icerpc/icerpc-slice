@@ -29,22 +29,8 @@ struct Module {
 
 struct Struct {
     entityInfo: EntityInfo
-    fields: Sequence<Field>
     isCompact: bool
-    isSlice1Only: bool
-}
-
-struct Class {
-    entityInfo: EntityInfo
     fields: Sequence<Field>
-    compactId: int32?
-    base: EntityId?
-}
-
-struct Exception {
-    entityInfo: EntityInfo
-    fields: Sequence<Field>
-    base: EntityId?
 }
 
 struct Field {
@@ -57,27 +43,25 @@ struct Field {
 
 struct Interface {
     entityInfo: EntityInfo
-    operations: Sequence<Operation>
     bases: Sequence<EntityId>
+    operations: Sequence<Operation>
 }
 
 struct Operation {
     entityInfo: EntityInfo
+    isIdempotent: bool
     parameters: Sequence<Field>
     hasStreamedParameter: bool
     returnType: Sequence<Field>
     hasStreamedReturn: bool
-    exceptionSpecification: Sequence<EntityId>
-    isIdempotent: bool
 }
 
 struct Enum {
     entityInfo: EntityInfo
-    enumerators: Sequence<Enumerator>
-    underlying: TypeId?
     isCompact: bool
     isUnchecked: bool
-}
+    underlying: TypeId?
+    enumerators: Sequence<Enumerator>
 
 struct Enumerator {
     entityInfo: EntityInfo
