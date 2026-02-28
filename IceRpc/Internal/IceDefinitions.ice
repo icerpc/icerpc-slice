@@ -30,23 +30,20 @@ module IceRpc::Internal
         int frameSize;
     }
 
-    /// Determines the retry behavior an invocation in case of a (potentially) recoverable error. OperationMode is
+    /// Specifies the retry behavior of an invocation in case of a (potentially) recoverable error. OperationMode is
     /// sent with each ice request to allow the server to verify the assumptions made by the caller.
     enum OperationMode
     {
-        /// Ordinary operations have <c>Normal</c> mode. These operations can modify object state; invoking such
-        /// an operation twice in a row may have different semantics than invoking it once. The Ice run time guarantees
-        /// that it will not violate at-most-once semantics for <c>Normal</c> operations.
+        /// An ordinary operation. The client runtime guarantees at-most-once semantics for such an operation.
         Normal,
 
-        /// <c>Nonmutating</c> is deprecated; use <c>Idempotent</c> instead.
+        /// Equivalent to {@link #Idempotent}, but deprecated.
+        ["deprecated:Use Idempotent instead."]
         Nonmutating,
 
-        /// Operations that use the Slice <c>idempotent</c> keyword can modify object state, but invoking an
-        /// operation twice in a row must result in the same object state as invoking it once. For example,
-        /// <c>x = 1</c> is an idempotent statement, whereas <c>x += 1</c> is not. For idempotent
-        /// operations, the Ice run-time does not guarantee at-most-once semantics.
-        \Idempotent,
+        /// An idempotent operation. The client runtime does not guarantee at-most-once semantics for such an
+        /// operation.
+        Idempotent,
     }
 
     /// The payload of most request and response frames starts with an encapsulation header that specifies the size of
