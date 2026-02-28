@@ -67,7 +67,7 @@ module IceRpc::Internal
         string category;
     }
 
-    /// The facet of a service. A sequence with 0 element corresponds to the default, empty facet; a sequence with a
+    /// The facet of a service. A sequence with 0 elements corresponds to the default, empty facet; a sequence with a
     /// single element corresponds to a non-empty facet; and a sequence with more than 1 element is invalid.
     sequence<string> Facet;
 
