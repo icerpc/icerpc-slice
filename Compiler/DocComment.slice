@@ -9,11 +9,11 @@ struct DocComment {
 }
 
 struct SeeTag {
-    linkTo: EntityId
+    linkTo: SliceId
 }
 
 struct LinkTag {
-    linkTo: EntityId
+    linkTo: SliceId
 }
 
 enum MessageComponent {

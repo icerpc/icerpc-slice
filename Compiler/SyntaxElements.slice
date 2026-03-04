@@ -3,18 +3,13 @@
 [cs::namespace("ZeroC.Slice.Compiler")]
 module Compiler
 
-/// A unique identifier for a Slice entity, typically a fully-scoped identifier.
-/// For example: 'MyOuterModule::MyInnerModule::MyInterface::MyOperation::MyParameter'.
-typealias EntityId = string
-
-/// A unique identifier for a Slice type or type alias, typically a fully-scoped identifier.
-/// For example: 'MyOuterModule::MyInnerModule::MyStruct'.
-/// A type ID can also refer to a built-in primitive type, such as 'int32' or 'string'.
-/// For anonymous types (sequences, dictionaries, results), the type ID is a normalized name of the anonymous type,
-/// such as 'Sequence<int32>' or 'Dictionary<string, MyModule::MyStruct>'. Its scope is the file in which it is defined,
-/// unlike the other type IDs which have global scope.
-/// Note: a type ID is an entity ID, but not vice versa.
-typealias TypeId = string
+/// A unique identifier for a Slice symbol.
+///
+/// For built-in primitive types, this is just the primitive's keyword; for example: 'int32' or 'string'.
+/// For built-in anonymous types (sequences, dictionaries, and results), this is a numeric ID (since they lack names).
+/// For all user-defined Symbols, this is always the symbol's fully-scoped identifier. For example:
+/// 'MyOuterModule::MyInnerModule::MyInterface::MyOperation::MyParameter'.
+typealias SliceId = string
 
 struct EntityInfo {
     identifier: string
@@ -36,14 +31,14 @@ struct Struct {
 struct Field {
     entityInfo: EntityInfo
     \tag: varint32?
-    typeId: TypeId
+    typeId: SliceId
     typeIsOptional: bool
     typeAttributes: Sequence<Attribute>
 }
 
 struct Interface {
     entityInfo: EntityInfo
-    bases: Sequence<EntityId>
+    bases: Sequence<SliceId>
     operations: Sequence<Operation>
 }
 
@@ -60,7 +55,7 @@ struct Enum {
     entityInfo: EntityInfo
     isCompact: bool
     isUnchecked: bool
-    underlying: TypeId?
+    underlying: SliceId?
     enumerators: Sequence<Enumerator>
 }
 
@@ -81,28 +76,22 @@ struct CustomType {
 
 struct TypeAlias {
     entityInfo: EntityInfo
-    underlying: TypeId
+    underlying: SliceId
     underlyingAttributes: Sequence<Attribute>
 }
 
 struct SequenceType {
-    /// The type ID of the sequence type. Starts with 'Sequence<' and ends with '>'.
-    typeId: TypeId
-    elementType: TypeId
+    elementType: SliceId
 }
 
 struct DictionaryType {
-    /// The type ID of the dictionary type. Starts with 'Dictionary<' and ends with '>'.
-    typeId: TypeId
-    keyType: TypeId
-    valueType: TypeId
+    keyType: SliceId
+    valueType: SliceId
 }
 
 struct ResultType {
-    /// The type ID of the result type. Starts with 'Result<' and ends with '>'.
-    typeId: TypeId
-    successType: TypeId
-    failureType: TypeId
+    successType: SliceId
+    failureType: SliceId
 }
 
 struct Attribute {
