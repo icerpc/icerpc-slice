@@ -34,9 +34,7 @@ struct Struct {
 struct Field {
     entityInfo: EntityInfo
     \tag: varint32?
-    typeId: TypeId
-    typeIsOptional: bool
-    typeAttributes: Sequence<Attribute>
+    dataType: TypeRef
 }
 
 struct Interface {
@@ -79,22 +77,27 @@ struct CustomType {
 
 struct TypeAlias {
     entityInfo: EntityInfo
-    underlying: TypeId
-    underlyingAttributes: Sequence<Attribute>
+    underlyingType: TypeRef // Can never be optional.
 }
 
 struct SequenceType {
-    elementType: TypeId
+    elementType: TypeRef
 }
 
 struct DictionaryType {
-    keyType: TypeId
-    valueType: TypeId
+    keyType: TypeRef // Can never be optional.
+    valueType: TypeRef
 }
 
 struct ResultType {
-    successType: TypeId
-    failureType: TypeId
+    successType: TypeRef
+    failureType: TypeRef
+}
+
+struct TypeRef {
+    typeId: TypeId
+    isOptional: bool
+    typeAttributes: Sequence<Attribute>
 }
 
 struct Attribute {
