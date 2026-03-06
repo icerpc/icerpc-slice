@@ -5,7 +5,7 @@ module Compiler
 
 struct DocComment {
     overview: Message
-    see: Sequence<EntityId>
+    see_tags: Sequence<EntityId>
 }
 
 enum MessageComponent {
