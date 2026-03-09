@@ -12,7 +12,7 @@ typealias EntityId = string
 /// For user-defined types, this is the type's fully-scoped identifier. For example: 'OuterModule::InnerModule::Foo'.
 /// For built-in primitive types, this is just the primitive's keyword; for example: 'int32' or 'string'.
 /// For anonymous types (sequences, dictionaries, and results), this is a numeric ID corresponding to the type's index
-/// in {@link SliceFile::contents}. These IDs are 0-indexed and are scoped to the file they're defined in.
+/// in {@link SliceFile::contents} (indices start from '0'). These IDs are scoped to the file they're defined in.
 typealias TypeId = string
 
 struct Attribute {
