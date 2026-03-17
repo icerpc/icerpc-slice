@@ -3,13 +3,13 @@
 [cs::namespace("ZeroC.Slice.Symbols.Internal.Compiler")]
 module Compiler
 
-["cs:internal"]
+[cs::internal]
 struct DocComment {
     overview: Sequence<MessageComponent>
     seeTags: Sequence<EntityId>
 }
 
-["cs:internal"]
+[cs::internal]
 enum MessageComponent {
     Text(v: string)
     Link(v: EntityId)

@@ -15,54 +15,54 @@ typealias EntityId = string
 /// in {@link SliceFile::contents} (indices start from '0'). These IDs are scoped to the file they're defined in.
 typealias TypeId = string
 
-["cs:internal"]
+[cs::internal]
 struct Attribute {
     directive: string
     args: Sequence<string>
 }
 
-["cs:internal"]
+[cs::internal]
 struct TypeRef {
     typeId: TypeId
     isOptional: bool
     typeAttributes: Sequence<Attribute>
 }
 
-["cs:internal"]
+[cs::internal]
 struct EntityInfo {
     identifier: string
     attributes: Sequence<Attribute>
     tag(1) comment: DocComment?
 }
 
-["cs:internal"]
+[cs::internal]
 struct Module {
     identifier: string
     attributes: Sequence<Attribute>
 }
 
-["cs:internal"]
+[cs::internal]
 struct Struct {
     entityInfo: EntityInfo
     isCompact: bool
     fields: Sequence<Field>
 }
 
-["cs:internal"]
+[cs::internal]
 struct Field {
     entityInfo: EntityInfo
     \tag: varint32?
     dataType: TypeRef
 }
 
-["cs:internal"]
+[cs::internal]
 struct Interface {
     entityInfo: EntityInfo
     bases: Sequence<EntityId>
     operations: Sequence<Operation>
 }
 
-["cs:internal"]
+[cs::internal]
 struct Operation {
     entityInfo: EntityInfo
     isIdempotent: bool
@@ -72,7 +72,7 @@ struct Operation {
     hasStreamedReturn: bool
 }
 
-["cs:internal"]
+[cs::internal]
 struct Enum {
     entityInfo: EntityInfo
     isCompact: bool
@@ -81,42 +81,42 @@ struct Enum {
     enumerators: Sequence<Enumerator>
 }
 
-["cs:internal"]
+[cs::internal]
 struct Enumerator {
     entityInfo: EntityInfo
     value: Discriminant
     fields: Sequence<Field>
 }
 
-["cs:internal"]
+[cs::internal]
 struct Discriminant {
     absoluteValue: uint64
     isNegative: bool
 }
 
-["cs:internal"]
+[cs::internal]
 struct CustomType {
     entityInfo: EntityInfo
 }
 
-["cs:internal"]
+[cs::internal]
 struct TypeAlias {
     entityInfo: EntityInfo
     underlyingType: TypeRef // Can never be optional.
 }
 
-["cs:internal"]
+[cs::internal]
 struct SequenceType {
     elementType: TypeRef
 }
 
-["cs:internal"]
+[cs::internal]
 struct DictionaryType {
     keyType: TypeRef // Can never be optional.
     valueType: TypeRef
 }
 
-["cs:internal"]
+[cs::internal]
 struct ResultType {
     successType: TypeRef
     failureType: TypeRef
