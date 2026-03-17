@@ -1,15 +1,13 @@
 // Copyright (c) ZeroC, Inc.
 
-[cs::namespace("ZeroC.Slice.Symbols.Internal.Compiler")]
+[cs::namespace("ZeroC.Slice.Symbols.Compiler")]
 module Compiler
 
-[cs::internal]
 interface CodeGenerator {
     generateCode(sourceFiles: Sequence<SliceFile>, referenceFiles: Sequence<SliceFile>) ->
         (generatedFiles: Sequence<GeneratedFile>, diagnostics: Sequence<Diagnostic>)
 }
 
-[cs::internal]
 struct SliceFile {
     path: string
     moduleDeclaration: Module
@@ -17,13 +15,11 @@ struct SliceFile {
     contents: Sequence<Symbol>
 }
 
-[cs::internal]
 struct GeneratedFile {
     path: string
     contents: string
 }
 
-[cs::internal]
 enum Symbol {
     Interface(v: Interface)
     Enum(v: Enum)
@@ -35,14 +31,12 @@ enum Symbol {
     TypeAlias(v: TypeAlias)
 }
 
-[cs::internal]
 struct Diagnostic {
     level: DiagnosticLevel
     message: string
     source: string?
 }
 
-[cs::internal]
 unchecked enum DiagnosticLevel : uint8 {
     Info
     Warning

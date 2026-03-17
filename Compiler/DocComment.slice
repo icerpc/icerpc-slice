@@ -1,15 +1,13 @@
 // Copyright (c) ZeroC, Inc.
 
-[cs::namespace("ZeroC.Slice.Symbols.Internal.Compiler")]
+[cs::namespace("ZeroC.Slice.Symbols.Compiler")]
 module Compiler
 
-[cs::internal]
 struct DocComment {
     overview: Sequence<MessageComponent>
     seeTags: Sequence<EntityId>
 }
 
-[cs::internal]
 enum MessageComponent {
     Text(v: string)
     Link(v: EntityId)
