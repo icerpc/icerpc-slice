@@ -13,7 +13,7 @@ The copy of record for these Slice files is in this repository. Each IceRPC impl
 own exact clone of these Slice files. For example, see the [sync-slice.py] Python script in icerpc-csharp.
 
 [Ice]: https://github.com/zeroc-ice/ice
-[Ice Slice]: https://docs.zeroc.com/ice/3.8/cpp/the-slice-language
+[ice-slice]: https://docs.zeroc.com/ice/3.8/cpp/the-slice-language
 [ice-protocol]: https://docs.icerpc.dev/icerpc/ice-protocol/protocol-frames
 [icerpc-protocol]: https://docs.icerpc.dev/icerpc/icerpc-protocol/mapping-rpcs-to-streams
 [Slic]: https://docs.icerpc.dev/icerpc/slic-transport/protocol-frames
