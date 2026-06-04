@@ -10,7 +10,7 @@ This directory provides [Slice] definitions shared by all IceRPC implementations
 | WellKnownTypes     | Custom types such as Uri and TimeStamp. These well-known types are RPC-independent.                                                                                                                                                                                            |
 
 The copy of record for these Slice files is in this repository. Each IceRPC implementation is expected to create its
-own exact clone of these Slice files. See for example the [sync-slice.py] Python script in icerpc-csharp.
+own exact clone of these Slice files. For example, see the [sync-slice.py] Python script in icerpc-csharp.
 
 [Ice]: https://github.com/zeroc-ice/ice
 [Ice Slice]: https://docs.zeroc.com/ice/3.8/cpp/the-slice-language
